@@ -1,8 +1,10 @@
-import Layout from "@/components/layout";
+import Layout from "@/components/layout"; //ska det stå /index här oxå?
 import "./globals.css";
 import StoryblokProvider from "@/providers/StoryblokProvider";
 import { StoryblokCMS } from "@/utils/cms";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
+
+
 
 storyblokInit({
   accessToken: StoryblokCMS.TOKEN,
@@ -11,6 +13,9 @@ storyblokInit({
 
 export default async function RootLayout({ children }) {
   const currentConfig = await StoryblokCMS.getConfig();
+  // console.log("currentConfig", currentConfig);
+  
+  
   return (
     <StoryblokProvider>
       <html>

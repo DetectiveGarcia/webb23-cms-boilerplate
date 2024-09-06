@@ -2,6 +2,8 @@ import StoryblokStory from "@storyblok/react/story";
 import { notFound } from "next/navigation";
 import { StoryblokCMS } from "@/utils/cms";
 
+
+
 //Generates static paths for all stories
 //Nextjs will generate a static page for each story
 export async function generateStaticParams() {
@@ -10,6 +12,7 @@ export async function generateStaticParams() {
     return paths;
   } catch (error) {
     console.log(error);
+    return [];
   }
 }
 
@@ -23,9 +26,11 @@ export async function generateMetadata({params}) {
 //This function is called for each item in the paths array returned from generateStaticParams func
 export default async function CMSPage({ params }) {
   try {
+  
+
     const currentStory = await StoryblokCMS.getStory(params);
     if (!currentStory) throw new Error();
-
+    // console.log(currentStory); // du kan också logga ut params för att se om rätt slug hanteras
     return <StoryblokStory story={currentStory} />;
   } catch (error) {
     notFound();

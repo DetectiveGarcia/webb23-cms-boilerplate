@@ -15,8 +15,11 @@ import {
 } from 'storyblok-rich-text-react-renderer';
 
 export default function RichTextDefault({blok}) {
-    const {richtext, ...rest} = blok;
 
+    const {richtext, ...rest} = blok;
+    if (!richtext) {
+      return <p>No rich text content available</p>;
+    }
   const resolveNodeHeading = (children, props) => {
     const { level } = props;
     return <h1>{children}</h1>;
@@ -76,9 +79,27 @@ export default function RichTextDefault({blok}) {
     },
   }
 
-  const renderedRichText = render(richtext, resolvers);
+  const renderedRichText = render(blok.richtext, {
+    markResolvers: {
+      bold: (children) => <strong>{children}</strong>,
+      textStyle: (children, props) => {
+        const { color } = props?.attrs || {}; // Extract color from props
+        return <span style={{ color: color || 'inherit' }}>{children}</span>;
 
-  
+      },
+      link: (children, props) => <a href={props.href}>{children}</a>,
+    },
+    nodeResolvers: {
+      paragraph: (children) => <p>{children}</p>,
+      heading: (children, { level }) => React.createElement(`h${level}`, {}, children),
+    },
+    blokResolvers: {},
+  });
+
+
+  console.log(JSON.stringify(blok.richtext.content, null, 2));
+
+
   return (
     <div {...rest} >
       {renderedRichText}

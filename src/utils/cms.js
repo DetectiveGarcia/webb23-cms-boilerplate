@@ -11,6 +11,7 @@ export class StoryblokCMS {
 
   static async getStory(params) {
     if (!params) return {};
+
     const uri = params?.slug?.join("/");
     const storyUrl = "cdn/stories/" + uri;
     const { data } = await this.sbGet(
@@ -31,9 +32,11 @@ export class StoryblokCMS {
   static async getConfig() {
     try {
       const { data } = await this.sbGet(
-        "cdn/stories/config",
+        "cdn/stories/site-config", //ändrade från 'cofig till 'site-cofig'
         this.getDefaultSBParams()
       );
+      // console.log("CONFIG", data);
+      
       return data?.story;
     } catch (error) {
       console.log("CONFIG ERROR", error);
@@ -62,6 +65,9 @@ export class StoryblokCMS {
 
       let { data } = await this.sbGet("cdn/links/", sbParams);
       let paths = [];
+
+      // console.log(data)
+      
 
       Object.keys(data.links).forEach((linkKey) => {
         const link = data.links[linkKey];

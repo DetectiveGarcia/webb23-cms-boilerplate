@@ -4,3 +4,5 @@ dist
 .env
 localhost*
 .vercel
+localhost.pem
+localhost-key.pem
