@@ -7,7 +7,11 @@ export class StoryblokCMS {
   static TOKEN = process.env.NEXT_PUBLIC_PREVIEW_STORYBLOK_TOKEN;
 
   static async sbGet(path, params) {
-    console.log("Using token:", TOKEN);
+    console.log("Using token:", this.TOKEN); // Ändra från TOKEN till this.TOKEN
+
+    if (!this.TOKEN) {
+      throw new Error("Storyblok access token is missing.");
+    }
 
     return getStoryblokApi().get(path, { ...params, token });
   }
