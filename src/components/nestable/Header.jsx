@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 
 const Header = ({ blok }) => {
 
@@ -10,7 +10,7 @@ const Header = ({ blok }) => {
   return (
     <header {...storyblokEditabel(blok)}>
       {/* Rendera logotyp och menylänkar */}
-      <img src={blok?.logo?.filename} alt="logo" />
+      <Image src={blok?.logo?.filename} alt="logo" />
       <nav>
         <ul>
           {blok.menu_links.map((link) => (

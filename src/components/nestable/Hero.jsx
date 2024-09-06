@@ -1,4 +1,4 @@
-
+import Image from 'next/image';
 
 export default function Hero({ blok }) {
 
@@ -18,7 +18,7 @@ export default function Hero({ blok }) {
           ))}
         </div>
  
-          <img src={blok?.image?.filename} alt="" className="heroImg" />
+          <Image src={blok?.image?.filename} alt="" className="heroImg" />
 
       </div>
     </section>

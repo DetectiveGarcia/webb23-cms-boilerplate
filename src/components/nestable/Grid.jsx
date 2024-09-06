@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import RichTextDefault from './RichText';
 
 const Grid = ({ blok }) => {
@@ -11,7 +12,7 @@ const Grid = ({ blok }) => {
             {/* Rendera barnkomponenterna som t.ex. ImageWithText */}
             {item.component === 'ImageWithText' && (
               <div>
-                <img src={item.image.filename} alt={item.title}  className='gridImg' />
+                <Image src={item.image.filename} alt={item.title}  className='gridImg' />
                 <h3>{item.title}</h3>
                 {/* Använd RichTextDefault-komponenten för att rendera text */}
                 <RichTextDefault blok={{ richtext: item.text }} />
