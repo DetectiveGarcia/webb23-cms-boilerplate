@@ -13,6 +13,7 @@ import Hero from "@/components/nestable/Hero";
 import Button from "@/components/nestable/Button";
 import Link from "@/components/nestable/Link";
 import ImageWithText from "@/components/nestable/ImageWithText";
+import GlobalSettings from "./GlobalSettings";
 
 const components = {
   "page": Page,
@@ -24,7 +25,8 @@ const components = {
   "hero": Hero,
   "button": Button,
   "link": Link,
-  "ImageWithText": ImageWithText
+  "ImageWithText": ImageWithText,
+  "Global Settings": GlobalSettings
 }
 
 storyblokInit({

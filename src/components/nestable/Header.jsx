@@ -10,7 +10,7 @@ const Header = ({ blok }) => {
   return (
     <header {...storyblokEditabel(blok)}>
       {/* Rendera logotyp och menylänkar */}
-      <Image src={blok?.logo?.filename} alt="logo" />
+      <Image src={blok?.logo?.filename} alt="logo" width={300} height={150}  />
       <nav>
         <ul>
           {blok.menu_links.map((link) => (

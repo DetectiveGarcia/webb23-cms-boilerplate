@@ -18,7 +18,7 @@ export default function Hero({ blok }) {
           ))}
         </div>
  
-          <Image src={blok?.image?.filename} alt="" className="heroImg" />
+          <Image src={blok?.image?.filename} alt="" className="heroImg" width={1080} height={720} />
 
       </div>
     </section>

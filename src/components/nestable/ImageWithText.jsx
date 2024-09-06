@@ -8,7 +8,7 @@ export default function ImageWithText({ blok }) {
   
   return (
     <div {...storyblokEditable(blok)}>
-      <Image src={blok.image.filename} alt={blok.title} />
+      <Image src={blok.image.filename} alt={blok.title} width={1080} height={1080} />
       <h2>{blok.title}</h2>
       {/* <RichTextDefault  blok={blok.text} /> */}
       <RichTextDefault blok={{ richtext: blok.text }} />

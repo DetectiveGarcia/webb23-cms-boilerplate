@@ -12,7 +12,7 @@ const Grid = ({ blok }) => {
             {/* Rendera barnkomponenterna som t.ex. ImageWithText */}
             {item.component === 'ImageWithText' && (
               <div>
-                <Image src={item.image.filename} alt={item.title}  className='gridImg' />
+                <Image src={item.image.filename} alt={item.title}  className='gridImg'  width={80} height={80} />
                 <h3>{item.title}</h3>
                 {/* Använd RichTextDefault-komponenten för att rendera text */}
                 <RichTextDefault blok={{ richtext: item.text }} />
