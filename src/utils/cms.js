@@ -6,8 +6,11 @@ export class StoryblokCMS {
   static TOKEN = process.env.NEXT_PUBLIC_PREVIEW_STORYBLOK_TOKEN;
 
   static async sbGet(path, params) {
-    return getStoryblokApi().get(path, params);
+    console.log("Using token:", this.TOKEN);
+    const storyblokApi = getStoryblokApi();
+    return storyblokApi.get(path, { ...params, token: this.TOKEN });
   }
+  
 
   static async getStory(params) {
     if (!params) return {};

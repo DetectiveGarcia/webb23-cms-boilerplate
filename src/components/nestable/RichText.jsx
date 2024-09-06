@@ -97,7 +97,7 @@ export default function RichTextDefault({blok}) {
   });
 
 
-  console.log(JSON.stringify(blok.richtext.content, null, 2));
+  // console.log(JSON.stringify(blok.richtext.content, null, 2));
 
 
   return (

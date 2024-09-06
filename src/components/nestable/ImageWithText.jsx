@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 
 export default function ImageWithText({ blok }) {
-  console.log(blok);
+  // console.log(blok);
   
   return (
     <div {...storyblokEditable(blok)}>
