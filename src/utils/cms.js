@@ -1,5 +1,5 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
-import  {storyblokInit, apiPlugin} from "@storyblok/react";
+
 export class StoryblokCMS {
   static IS_PROD = process.env.NODE_ENV === "production";
   static IS_DEV = process.env.NODE_ENV === "development";
@@ -7,8 +7,14 @@ export class StoryblokCMS {
   static TOKEN = process.env.NEXT_PUBLIC_PREVIEW_STORYBLOK_TOKEN;
 
   static async sbGet(path, params) {
+    console.log("Using token:", this.TOKEN);
+
     return getStoryblokApi().get(path, params);
   }
+  
+
+  
+
   static async getStory(params) {
     if (!params) return {};
 
