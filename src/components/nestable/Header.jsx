@@ -15,7 +15,7 @@ const Header = ({ blok }) => {
         <ul>
           {blok.menu_links.map((link) => (
             <li key={link._uid}>
-              <a href={link.linkUrl.cached_url}>{link.linkName}h1j</a>
+              <a href={link.linkUrl.cached_url}>{link.linkName}</a>
             </li>
           ))}
         </ul>

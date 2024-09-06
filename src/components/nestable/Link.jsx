@@ -9,6 +9,6 @@ export default function Link({ blok }) {
     // <a href={blok.linkUrl.cached_url} {...storyblokEditable(blok)}>
     //   {blok.linkName}
     // </a>
-    <pre>{JSON.stringify(blok, null, 2)}</pre>
+    <pre>{JSON.stringify(blok, null, 2)}fdsg</pre>
   );
 }

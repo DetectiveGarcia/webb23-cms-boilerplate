@@ -104,8 +104,9 @@ section {
 }
 
 button {
-  border: 1px solid #f0a500;
+
   border-radius: 5px;
+  background-color: #39443c;
 }
 
 .heroBtn {
@@ -163,7 +164,7 @@ align-items: center; */
 }
 
 .grid-item {
-  border: 1px solid #f0a500;
+  background-color: #212a2b;
   border-radius: 5px;
   width: 14rem;
   height: 14rem;
@@ -176,4 +177,21 @@ align-items: center; */
 
 .gridImg {
   max-width: 5rem;
+
 }
+
+
+/* footer{
+  height: 3rem;
+
+  padding: 1.5rem 3rem;
+}
+*/
+.foot-container{
+  border-top: 1px solid #9aa796;
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+} 

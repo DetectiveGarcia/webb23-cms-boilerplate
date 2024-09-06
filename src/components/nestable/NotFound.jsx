@@ -1,4 +1,5 @@
 import { StoryblokCMS } from "@/utils/cms";
+import { storyblokEditable } from "@storyblok/react";
 
 export default function NotFound({ blok }) {
 
@@ -8,7 +9,7 @@ export default function NotFound({ blok }) {
     
 
     return(
-        <h1>{blok?.text}</h1>
+        <h1 {...storyblokEditable(blok)} >{blok?.text}</h1>
     )
     
 }
