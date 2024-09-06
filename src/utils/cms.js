@@ -13,7 +13,7 @@ export class StoryblokCMS {
       throw new Error("Storyblok access token is missing.");
     }
 
-    return getStoryblokApi().get(path, { ...params, token });
+    return getStoryblokApi().get(path, { ...params, token: this.TOKEN });
   }
   
 
